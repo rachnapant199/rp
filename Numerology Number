@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int date ,month;
+    int ds=0,ms=0, dms;
+    int rem,nm=0, d,m;
+    
+    cout<<"Enter the Your Date from DOB :";
+    cin>>date;
+    cout<<"Enter Your Month ";
+    cin>>month;
+    d=date;
+    m=month;
+    
+    while(date>0)
+    {
+        rem = date %10;
+        ds = ds+rem;
+     
+        date = date /10;
+    }
+    while(month>0)
+    {
+        rem = month%10;
+        ms = ms+rem;
+        month = month/10;
+    }
+    
+    
+    dms = ms+ds;
+    
+    while(dms>0)
+    {
+        rem = dms%10;
+        nm =nm+rem;
+        dms /=10;
+    }
+    cout<<"\n Your Enterd Date : "<<d;
+    cout<<"\n Your Enterd Month : "<<m;
+    cout<<"\n According to Your Date and Month Your Numerology number is : "<<nm;
+    
+        
+    return 0;
+}
