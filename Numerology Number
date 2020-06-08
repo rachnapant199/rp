@@ -2,16 +2,21 @@
 using namespace std;
 int main()
 {
-    int date ,month;
-    int ds=0,ms=0, dms;
-    int rem,nm=0, d,m;
-    
+    int date ,month,year,d,m,y;
+    int ds=0,ms=0,ys=0, dms,numero=0;
+    int rem,nm=0;
+    char name[20];
+    cout<<"Enter your Name: ";
+    cin>>name;
     cout<<"Enter the Your Date from DOB :";
     cin>>date;
     cout<<"Enter Your Month ";
     cin>>month;
+    cout<<"Enter The Year ";
+    cin>>year;
     d=date;
     m=month;
+    y=year;
     
     while(date>0)
     {
@@ -26,20 +31,30 @@ int main()
         ms = ms+rem;
         month = month/10;
     }
-    
-    
-    dms = ms+ds;
-    
-    while(dms>0)
+    while(year>0)
+    {
+        rem = year%10;
+        ys = ys+rem;
+        year = year/10;
+    }
+         dms = ms+ds+ys;
+       
+     while(dms>0)
     {
         rem = dms%10;
         nm =nm+rem;
         dms /=10;
     }
-    cout<<"\n Your Enterd Date : "<<d;
-    cout<<"\n Your Enterd Month : "<<m;
-    cout<<"\n According to Your Date and Month Your Numerology number is : "<<nm;
+    while(nm>0)
+    {
+        rem = nm%10;
+        numero = numero+rem;
+        nm/=10;
+    }
+    cout<<"\nWelcome "<<name<<" Your Date of Birth is  : "<<d<<" - "<<m<<" - "<<y;
+    cout<<"\n According to Your Date and Month Your Numerology number is : "<<numero;
     
         
     return 0;
 }
+
